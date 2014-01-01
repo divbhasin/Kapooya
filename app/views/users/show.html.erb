@@ -1,0 +1,15 @@
+<%= provide(:title, @user.name) %>
+<div id = "everything">
+	<section>
+<%= gravatar_for @user %>
+<%= @user.name %> 
+</section>
+</div>
+<style>
+    #everything {
+    	font-family: Times New Roman;
+    	font-size: 3em;
+    	text-align: center;
+    	font-style: bold;
+    }
+</style>
