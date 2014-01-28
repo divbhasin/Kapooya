@@ -35,4 +35,13 @@ describe "UserPages" do
     it { should have_selector 'h1', text: user.name }
     it { should have_selector 'title', text: user.email }
    end
+
+   describe "after saving the user" do
+    it { should have_link "Sign Out" }
+  end
+
+  describe "followed by signout" do
+    before { click_link "Sign Out" }
+    it { should have_link "Sign In" }
+    end 
 end

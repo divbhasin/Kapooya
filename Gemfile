@@ -11,9 +11,10 @@ end
 
 group :test do
 	gem 'capybara', '1.1.2'
+	gem 'cucumber-rails'
 end
 
-gem 'pg', '0.12.2'
+gem 'pg', '0.15.1'
 
 gem 'protected_attributes'
 
