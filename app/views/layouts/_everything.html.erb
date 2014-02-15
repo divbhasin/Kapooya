@@ -32,9 +32,7 @@
       </nav>
     </div>
     <% if signed_in? %>
-  <%= link_to "Sign Out", signout_path, via: :delete %>
-  <% else %>
-  <%= link_to "Sign In", signin_path %>
+  <%= link_to "Sign Out", signout_path, sign_out %>
   <% end %>
   </div>
 </header>

@@ -5,6 +5,7 @@ SampleApp::Application.routes.draw do
   get "/signin", to: "sessions#new"
   get "/signout", to: "sessions#destroy", :via => :delete
   get "/signup", to: "users#new"
+  get "/update", to: "users#edit"
   get "/home", to: "static_pages#home"
   get "/help", to: "static_pages#help"
   get "/login", to: "static_pages#login"
