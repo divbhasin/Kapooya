@@ -1,0 +1,20 @@
+<% if object.errors.any? %>
+<div id = "errorexplanation" >
+	<div class = "alert alert-error">
+		Oops! There are <%= pluralize (object.errors.count), "error" %>
+	</div>
+	  <ul>
+	      <% object.errors.full_messages.each do |msg| %>
+	    <li> <%= msg %> </li>
+	  <% end %>
+	</ul>
+ </div>
+<% end %> 
+<style>
+   #errorexplanation {
+   	color: red;
+   	font-size: 1em;
+   	font-family: Helvetica;
+   	padding: -10px -10px -10px -10px;
+   }
+</style>

@@ -1,6 +1,16 @@
 SampleApp::Application.routes.draw do
+<<<<<<< HEAD
   get "users/new"
   get "/signup", to: "users#new"
+=======
+  resources :users
+  resources :sessions, only: [ :new, :create, :destroy ]
+  root :to => "static_pages#home"
+  get "/signin", to: "sessions#new"
+  get "/signout", to: "sessions#destroy", :via => :delete
+  get "/signup", to: "users#new"
+  get "/update", to: "users#edit"
+>>>>>>> origin/master
   get "/home", to: "static_pages#home"
   get "/help", to: "static_pages#help"
   get "/login", to: "static_pages#login"
