@@ -1,35 +1,6 @@
 <% provide(:title, 'Sign Up') %>
 <h1>Sign Up</h1>
 <p>Don't have an account? Sign Up today!</p>
-<<<<<<< HEAD
-=======
-
-<div class = "row">
-	<div class = "span6">
-		<%= form_for(@user) do |f| %>
-		<%= render 'shared/error_messages', object: f.object %>
-		<div class = "name">
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-		</div>
-		<div class = "email">
-		<%= f.label :email %>
-		<%= f.text_field :email %>
-		</div>
-		<div class = "password">
-		<%= f.label :password %>
-		<%= f.password_field :password %>
-		</div>
-		<div class = "passwordconfirmation">
-		<%= f.label :password_confirmation, "Confirmation" %>
-		<%= f.password_field :password_confirmation %>
-		</div>
-		<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-		<% end %>
-	</div>
-</div>
-
->>>>>>> origin/master
 <style>
 p {
 	text-align: center;
@@ -37,36 +8,4 @@ p {
 h1 {
 	text-align: center;
 	font-weight: bold;
-<<<<<<< HEAD
-=======
-	font-family: Myriad Pro;
-}
-.span6 {
-	text-align: center;
-	vertical-align: middle;
-	height: 100%;
-	position: relative;
-	overflow: hidden;
-    z-index: 10;
-    padding: 25px 25px 25px 25px;
-}
-.row {
-	vertical-align: inherit;
-	height: 100%;
-	width: 100%;
-	border: 1px solid black;
-}
-.name {
-	padding: 10px 10px 10px 10px;
-}
-.email {
-	padding: 10px 10px 10px 10px;
-}
-.password {
-	padding: 10px 10px 10px 10px;
-}
-.passwordconfirmation {
-	padding: 10px 10px 10px 10px;
-	padding-bottom: 20px;
->>>>>>> origin/master
 }
