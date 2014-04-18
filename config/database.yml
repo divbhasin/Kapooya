@@ -12,7 +12,11 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+<<<<<<< HEAD
 test:
+=======
+test: &test
+>>>>>>> origin/master
   adapter: sqlite3
   database: db/test.sqlite3
   pool: 5
@@ -23,3 +27,9 @@ production:
   database: db/production.sqlite3
   pool: 5
   timeout: 5000
+<<<<<<< HEAD
+=======
+
+cucumber:
+  <<: *test
+>>>>>>> origin/master
