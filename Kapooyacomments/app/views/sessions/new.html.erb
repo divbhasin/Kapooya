@@ -1,0 +1,33 @@
+<% provide(:title, "Sign In") %>
+<div class = "jumbotron">
+<h1> Sign In </h1>
+<div id= "signin">
+<%= form_for(:session, url: sessions_path) do |f| %>
+<div class = "field_with_errors">
+<%= f.label :email %>
+<%= f.text_field :email %> 
+</div>
+<br />
+<br />
+<div class = "field_with_errors">
+<%= f.label :password %>
+<%= f.password_field :password %>
+</div>
+<br />
+<br />
+
+<%= f.submit "Sign In", class: "ink-button blue" %>
+<% end %>
+<p> New user? <%= link_to "Sign up now", signup_path %> </p>
+</div>
+</div>
+<style>
+     h1 {
+     	font-family: Myriad Pro;
+     	text-align: center;
+     }
+     #signin {
+     	text-align: center;
+     	padding: 25px 25px 25px 25px;
+     }
+</style>

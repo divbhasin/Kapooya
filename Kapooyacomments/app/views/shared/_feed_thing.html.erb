@@ -1,0 +1,35 @@
+<ul id = "<%= feed_thing.id %>" >
+	<%= link_to gravatar_for(feed_thing.user), feed_thing.user %>
+
+	<%= link_to feed_thing.user.name, feed_thing.user %>
+	<br />
+
+	<span class = "content">
+		<%= feed_thing.content %>
+	</span>
+
+	<br />
+	<span class = "time" >
+		Posted <%= time_ago_in_words(feed_thing.created_at) %> ago
+		<br />
+	Updated <%= time_ago_in_words(feed_thing.updated_at) %> ago 
+	</span>
+	<br />
+	<!-- <% @micropost = Micropost.find_by(params[:micropost_id])%> -->
+	 <%= link_to "Comment", new_micropost_comment_path(micropost_id: feed_thing.id) %> 
+	<% # if @micropost.comments.any? %>
+	 <% # @micropost.comments.each do |f| %>
+	 <% # f.commenting %>
+	 <% # end %>
+	 <br />
+	 <a href = "<%= micropost_comments_path(micropost_id: feed_thing.id)%> "</a> Comments (<%=feed_thing.comments.count%>) 
+	 <br />
+	 <% if current_user?(feed_thing.user) %>
+	<%= link_to "Edit post", feed_thing, method: :edit, url: edit_micropost_path(Micropost.find_by(params[:id])) %> 
+	<br />
+	<%= link_to "Delete", feed_thing, method: :delete,
+	                                  data: { confirm: "Are you sure?" },
+	                                  title: feed_thing.content %>
+	<% end %>
+	<hr />
+</ul>

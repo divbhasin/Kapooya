@@ -1,0 +1,44 @@
+<%= provide(:title, "Comment") %>
+<div class = "userandcontent">
+<br />
+<%= link_to gravatar_for(@user) %>
+<h2><%= link_to @micropost.user.name %></h2>
+<hr />
+<h2><%= @micropost.content %></h2>
+<br />
+</div>
+<br />
+<div class = "form" >
+<%= form_for([@micropost, @comment]) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<%= f.label :commenting %>
+<%= f.text_area :commenting, placeholder: "Comment", name: "commenting" %>
+
+<!--<div class = "field_with_errors", input type= "text", ng-model = "input"><%= f.text_area :commenting, placeholder: "Comment..." %> </div> -->
+
+<%= f.hidden_field(:micropost_id, :value => @micropost.id) %>
+
+<!-- <%= f.hidden_field(:user_id, :value => @user.id) %> -->
+
+<br />
+<hr />
+<%= f.submit "Comment", class: "btn btn-large btn-primary" %>
+<% end %>
+</div>
+<style>
+ .userandcontent {
+ 	font-family: Myriad Pro;
+ 	background: white;
+    border: 2px solid black;
+    text-align: center;
+}
+.form {
+	font-family: Myriad Pro;
+ 	background: white;
+    border: 2px solid black;
+    text-align: center;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding: 10px 10px 10px 10px;
+}
+</style>

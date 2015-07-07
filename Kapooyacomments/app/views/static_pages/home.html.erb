@@ -1,0 +1,98 @@
+<%= provide(:title, 'Home') %>
+<% if signed_in? %>
+<aside class = "aside">
+<section class = "section1">
+  <%= render 'shared/user_info' %>
+</section>
+<section class = "section2"> 
+  <%= render 'shared/micropost_form' %>
+</section>
+<section class = "followingandfollowers">
+   <% @user ||= current_user %>
+ <a href = "<%= following_user_path(@user) %>" />
+      <strong id = "following"> Following <%= @user.following.count %> user(s) </strong>
+
+      <br />
+      <a href = "<%= followers_user_path(@user) %>" />
+   <strong id = "followers"> <%= @user.followers.count %> followers </strong>
+ </section>
+</aside>
+<br />
+<br />
+<section class = "asidedup">
+  <h4> Status Feed </h4>
+  <%= render 'shared/feed' %>
+</section>
+<% else %>
+<div class="center-hero-unit"> 
+  <div class="jumbotron">
+    <div class="container">
+   <h1 class="header">Kapooya!</h1>
+   <p>Welcome to Kapooya! This website is a social networking site open for people of all ages.</p>
+   <p>This is the home page for my blog and for your information, this blog is pure Ruby on Rails!</p>
+   <%= link_to "Sign up now!","/signup", class: "ink-button blue" %>
+   <p> or </p>
+   <%= link_to "Sign In", "/sessions/new", class: "ink-button blue" %></div>
+</div>
+    <br />
+         <div class = "place"> <input type="text" ng-model="something" placeholder="What's your name?">
+  <hr>
+  <h2> Hello, <span> {{something}} </span> ! </h2>
+  </hr>
+</div>
+<% end %>
+  <style>
+   span {
+    color: #C67171;
+    font-family: Myriad Pro;
+   }
+   .place {
+    text-align: center;
+   }
+   h2 {
+    text-align: center;
+   }
+
+  .center-hero-unit {
+  	padding: 2px 4px 5px 3px;
+  	text-align: center;
+  	font-family: Myriad Pro;
+  	font-size: 1.5em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+  }
+  .header {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 2em;
+  }
+  .jumbotron {
+    border: 1px solid black;
+  }
+  .aside {
+    background: white;
+    border: 2px solid black;
+  }
+  .section1 {
+    text-align: center;
+  }
+  .section2 {
+    text-align: center;
+  }
+  .asidedup {
+    background: white;
+    border: 2px solid black;
+    padding: 10px 10px 10px 10px;
+  }
+  h4 {
+    font-family: Myriad Pro;
+    text-align:  center;
+    padding-top: 10px;
+  }
+  .followingandfollowers {
+    font-family: Myriad Pro;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+  }
+  </style>
