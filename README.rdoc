@@ -1,7 +1,1 @@
-== README
-
-<<<<<<< HEAD
 A social network designed using Ruby on Rails, AngularJS, and MySQL. Gives users the ability to post, comment, create account, recieve notifications and follow other users. Posting is done instantaneously through AJAX and each user has their own profile page and feeds.
-=======
-Testing out pushing Kapooya to GitHub. For the official release, refer to the Kapooya repo.
->>>>>>> 47d3c45549d929d49faa15656e77e83e459b9ab2
