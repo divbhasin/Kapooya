@@ -24,6 +24,8 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '3.0.0'
 
 gem 'factory_girl_rails'
+gem 'database_cleaner'
+gem 'faker', '1.2.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -55,6 +57,7 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
+gem 'angularjs-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
@@ -62,3 +65,4 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'will_paginate'

@@ -14,10 +14,12 @@
   <nav class="navbar-inverse">
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/contact">Contact Us</a></li>
+      <li><a href="/contact">Contact Us</a></li>
       <li><a href="/home">Home</a></li>
-          <li><a href="/signin">Sign In</a></li>
           <li><a href="/help">Help</a></li>
+          <% if signed_in? %>
+          <li><a href="/users">Users</a></li>
+          <% end %>
         </ul>
       </li>
     </ul>
@@ -32,7 +34,7 @@
       </nav>
     </div>
     <% if signed_in? %>
-  <%= link_to "Sign Out", signout_path, sign_out %>
+  <%= link_to "Sign Out", signout_path %>
   <% end %>
   </div>
 </header>

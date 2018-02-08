@@ -1,11 +1,20 @@
 SampleApp::Application.routes.draw do
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :sessions, only: [ :new, :create, :destroy ]
+  resources :microposts, only: [:create, :destroy, :update, :show] do
+    resources :comments
+  end
+  resources :relationships, only: [:create, :destroy]
   root :to => "static_pages#home"
   get "/signin", to: "sessions#new"
   get "/signout", to: "sessions#destroy", :via => :delete
   get "/signup", to: "users#new"
   get "/update", to: "users#edit"
+  get "/users", to: "users#index"
   get "/home", to: "static_pages#home"
   get "/help", to: "static_pages#help"
   get "/login", to: "static_pages#login"

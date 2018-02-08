@@ -1,0 +1,6 @@
+<%= form_for [@microposts, @comment], html: { url: new_micropost_comment_path} do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<%= f.text_area :commenting, placeholder: "Comment..." %>
+<% f.hidden_field :micropost_id, :user_id %>
+<%= f.submit "Comment", class: "btn btn-large btn-primary" %>
+<% end %>

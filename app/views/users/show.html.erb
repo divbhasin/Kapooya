@@ -1,15 +1,67 @@
 <%= provide(:title, @user.name) %>
+<% unless current_user?(@user) %>
+<%= link_to "Back to Profile", current_user %>
+<% end %>
 <div id = "everything">
 	<section>
+    <%= @user.email %>
 <%= gravatar_for @user %>
-<%= @user.name %> 
+<%= @user.name %> <br />
+<%= link_to "Update Profile", update_path %>
 </section>
 </div>
+ <section class = "followingandfollowers">
+   <% @user ||= current_user %>
+ <a href = "<%= following_user_path(@user) %>" />
+
+      <strong id = "following"> Following <%= @user.following.count %> user(s) </strong>
+
+      <br />
+      <a href = "<%= followers_user_path(@user) %>">
+   <strong id = "followers"> <%= @user.followers.count %> followers </strong>
+ </a>
+ </section> 
+<%= render 'shared/follow_form' if signed_in? %>
+<br />
+<div class = "microposts">
+<% if @user.microposts.any? %>
+ <h3>Posts (<%= @user.microposts.count %>)</h3>
+      <ol class="micropost">
+        <%= render @microposts %>
+        <%= @microposts.each do %>
+        <%= link_to "Comment", micropost_path(params[:id]) %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+</div>
+</section>
 <style>
     #everything {
     	font-family: Myriad Pro;
     	font-size: 3em;
     	text-align: center;
     	font-style: bold;
+    }
+    .microposts {
+      font-size: 15;
+      font-family: Myriad Pro;
+    }
+    h3 {
+      text-align: center;
+    }
+    .micropost {
+      margin-right: 400px;
+      margin-left: 400px;
+      background: white;
+    border: 2px solid black;
+    }
+    .followingandfollowers {
+      text-align: center;
+      font-family: Myriad Pro;
+      font-size: 2em;
+      background-color: white;
+      border: 1px solid black;
+      margin-left: 400px;
+      margin-right: 400px;
     }
 </style>

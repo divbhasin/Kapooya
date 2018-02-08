@@ -1,7 +1,9 @@
-<% provide(:title, "Edit User") %>
+<% provide(:title, "Update Profile") %>
+<div class = "update">
 <h1> Update your profile </h1>
+
 <%= form_for(@user) do |f| %>
-<%= render 'shared/error_messages' %>
+<%= render 'shared/error_messages', object: f.object %>
 <%= f.label :name %>
 <%= f.text_field :name %>
 <%= f.label :email %>
@@ -12,3 +14,6 @@
 <%= f.password_field :password_confirmation %>
 <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
 <% end %>
+<%= gravatar_for @user %>
+<a href = "https://pbs.twimg.com/profile_images/1138934293/gravatar-blue-alpha.png"> change </a>
+</div>

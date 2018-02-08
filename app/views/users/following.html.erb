@@ -1,0 +1,13 @@
+<% will_paginate @following %>
+<% current_user.following.each do |user| %>
+<ul> 	<%= gravatar_for user, size: 15, class: "gravatar" %>
+	<%= link_to user.name, user, class: "names" %> 
+</ul>
+<% end %>
+<% will_paginate @following %>
+<style>
+  .names {
+	font-family: Myriad Pro;
+	font-size: 30px;
+}
+</style>

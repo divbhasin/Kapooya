@@ -1,0 +1,28 @@
+<ul id = "<%= feed_thing.id %>" >
+	<%= link_to gravatar_for(feed_thing.user), feed_thing.user %>
+
+	<%= link_to feed_thing.user.name, feed_thing.user %>
+	<br />
+
+	<span class = "content">
+		<%= feed_thing.content %>
+	</span>
+
+	<br />
+	<span class = "time" >
+		Posted <%= time_ago_in_words(feed_thing.created_at) %> ago
+	</span>
+	<br />
+	<% if current_user?(feed_thing.user) %>
+	<%= render 'shared/comment_form' %>
+	 <% # link_to "Comment", micropost_path(@micropost) %> 
+	<%= link_to "Edit post", feed_thing, method: :update %> 
+	<br />
+	<%= link_to "Delete", feed_thing, method: :delete,
+	                                  remote: true,
+	                                  data: { confirm: "Are you sure?" },
+	                                  title: feed_thing.content %>
+	 <%= render 'shared/comment_form' %>
+	<% end %>
+	<hr />
+</ul>
