@@ -8,6 +8,13 @@ describe "UserPages" do
       get user_pages_index_path
       response.status.should be(200)
     end
+<<<<<<< HEAD
+    describe "Sign Up page" do
+    	before { visit signup_path }
+    	 it { should have_selector('h1',    text: 'Sign up') }    
+    	it { should have_selector('title', text: full_title('Sign up')) 
+  end
+=======
 
     describe "Sign Up page" do
     	before { visit signup_path }
@@ -51,4 +58,5 @@ describe "UserPages" do
     before { click_link "Sign Out" }
     it { should have_link "Sign In" }
     end 
+>>>>>>> origin/master
 end

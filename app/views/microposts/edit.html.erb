@@ -1,0 +1,9 @@
+<% @micropost = current_user.microposts.find_by(params[:id]) %>
+<%= @micropost.user.name %>
+<br />
+<%= @micropost.content %>
+<%= form_for (@micropost) do |f| %>
+<%= f.label :content %>
+<%= f.text_field :content %>
+<%= f.submit "Submit changes" %>
+<% end %>

@@ -1,7 +1,14 @@
 require 'spec_helper'
 
 describe User do
+<<<<<<< HEAD
   before { @user = User.new(name: "Example User", email: "user@example.com", password: "footall", password_confirmation: "footall")}
+=======
+<<<<<<< HEAD
+  pending "add some examples to (or delete) #{__FILE__}"
+=======
+  before { @user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")}
+>>>>>>> 1b625cfcb66b1584f64d6e618ada233743bded68
  end
   subject { @user }
   it { should respond_to (:name)}

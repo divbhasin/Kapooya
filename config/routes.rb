@@ -1,9 +1,13 @@
 SampleApp::Application.routes.draw do
+<<<<<<< HEAD
   resources :users do
     member do
       get :following, :followers
     end
   end
+  get "users/new"
+  get "/signup", to: "users#new"
+  resources :users
   resources :sessions, only: [ :new, :create, :destroy ]
   resources :microposts, only: [:create, :destroy, :update, :show] do
     resources :comments
