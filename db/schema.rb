@@ -11,17 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20131201015043) do
+=======
 ActiveRecord::Schema.define(version: 20140104025336) do
+>>>>>>> origin/master
 
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+<<<<<<< HEAD
+  end
+
+=======
     t.string   "password_digest"
     t.string   "remember_token"
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
+>>>>>>> origin/master
 end

@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
+  def new
+  end
+end
+=======
   before_action :correct_user, only: [:edit, :update]
   before_filter :signed_in_user, only: [:edit, :update]
   def new
@@ -35,3 +40,4 @@ def private
   end
   end
   end 
+>>>>>>> origin/master

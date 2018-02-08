@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+<<<<<<< HEAD
+	attr_accessible :name, :email
+=======
 	attr_accessible :name, :email, :password, :password_confirmation
 	has_secure_password
 
@@ -17,4 +20,5 @@ class User < ActiveRecord::Base
     def create_remember_token
     	self.remember_token = SecureRandom.urlsafe_base64
     end
+>>>>>>> origin/master
 end

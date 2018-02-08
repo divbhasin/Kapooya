@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe User do
+<<<<<<< HEAD
+  pending "add some examples to (or delete) #{__FILE__}"
+=======
   before { @user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")}
  end
   subject { @user }
@@ -93,4 +96,5 @@ describe "when email format is invalid" do
  			specify { user_for_invalid_password.should be_false }    
  		end  
  	end
+>>>>>>> origin/master
 end
