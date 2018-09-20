@@ -9,7 +9,8 @@ require "sprockets/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env)
+# Bundler.require(:default, Rails.env)
+Bundler.require(*Rails.groups(:assets => %w(development test)))
 
 module SampleApp
   class Application < Rails::Application
@@ -24,5 +25,11 @@ module SampleApp
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    # config.action_view.JavaScript_expansions[:defaults] = %w(jquery rails application)
+    config.encoding = "utf-8"
+    config.filter_parameters += [:password]
+    config.active_record.whitelist_attributes = true
+    config.assets.enabled = true
+    config.assets.version = '1.0'
   end
 end

@@ -1,0 +1,20 @@
+<ul id = " microposts ">
+<p> <%= micropost.content %> </p>
+<span> Posted <%= time_ago_in_words(micropost.created_at) %> ago </span>
+<% if current_user?(micropost.user) %>
+<br />
+<%= link_to "Delete", micropost, method: :delete,
+                                 data: { confirm: "Are you sure?" },
+                                 title: micropost.content %>
+<% end %>
+ </ul>
+ <hr />
+ <style>
+   p {
+   	font-size: 16px;
+   }
+   span {
+   	font-size: 11px;
+   	color: #787878;
+   }
+ </style>

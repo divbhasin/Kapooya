@@ -1,0 +1,6 @@
+<%= form_for(@micropost) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+
+<div class = "field_with_errors", input type= "text", ng-model = "input"><%= f.text_area :content, placeholder: "What's up?" %> </div>
+<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

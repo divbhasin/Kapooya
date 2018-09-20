@@ -1,0 +1,23 @@
+<div class = "jumbotron">
+<%= gravatar_for(@user) %>
+<%= @micropost.user.name %>
+<br />
+<%= @micropost.content %>
+<br />
+</div>
+<% @micropost.comments.each do |f| %>
+<br />
+<%= gravatar_for(f.user) %>
+<br />
+<%= link_to(f.user.name) %> <br />
+<div class = "comment"><%= f.commenting %></div>
+<hr />
+<% end %>
+<style>
+.jumbotron {
+	text-align: center;
+}
+.comment {
+	font-size: 20px;
+	font-family: Times New Roman;
+}

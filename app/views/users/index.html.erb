@@ -1,0 +1,38 @@
+<% provide(:title, "All Users") %>
+<h1> All Users </h1>
+
+<%= will_paginate %>
+
+<ul class = "users">
+	<% unless current_user?(@user) then @users.each do |user| %>
+	<li class = "indiuser">
+	<%= gravatar_for user, size: 15, class: "gravatar" %>
+	<%= link_to user.name, user, class: "names" %>
+	<br />
+		<% if current_user.admin? %>
+	<%= link_to "Delete", user, method: :delete, data: { confirm: "Are you sure?" } %> 
+	</li>
+	<% end %>
+	<% end %>
+	<% end %>
+</ul> 
+<style>
+.users {
+	font-family: Myriad Pro;
+}
+.indiuser {
+	background-color: white;
+	border: 1px solid black;
+	margin-right: 1000px;
+	padding: 4px 4px 4px 4px;
+}
+.names {
+	font-family: Myriad Pro;
+	font-size: 30px;
+}
+h1 {
+	text-align: center;
+	font-family: Helvetica;
+}
+</style>
+<%= will_paginate %>

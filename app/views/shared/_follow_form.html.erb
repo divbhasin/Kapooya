@@ -1,0 +1,20 @@
+ <!-- The line below is indicating that the buttons should not be rendered on the profile page of the current user since the current user cannot follow itself. Its pretty much a negation of if -->
+<div class = "followbutton"><% unless current_user?(@user) %> 
+<% if current_user.following?(@user) %>
+<%= form_for(current_user.relationships.find_by(followed_id: @user.id), html: { method: :delete }) do |f| %>
+<%= f.submit "Unfollow", class: "btn btn-large btn-primary" %>
+<% end %>
+<% else %>
+<%= form_for(current_user.relationships.build(followed_id: @user.id)) do |f| %>
+<%= f.hidden_field :followed_id %>
+<%= f.submit "Follow", class: "btn btn-large btn-primary" %>
+<% end %>
+<% end %>
+<% end %>
+</div>
+<style>
+  .followbutton {
+  	padding: 5px 5px 5px 5px;
+  	text-align: center;
+  }
+</style>
