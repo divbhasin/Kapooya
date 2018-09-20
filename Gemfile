@@ -25,7 +25,7 @@ gem 'sass-rails', '~> 4.0.0'
 
 gem 'bootstrap-sass', '3.0.0'
 
-gem 'factory_girl_rails'
+gem 'factory_bot_rails'
 gem 'database_cleaner'
 gem 'faker', '1.2.0'
 
