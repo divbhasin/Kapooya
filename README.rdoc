@@ -1,1 +1,3 @@
 A social network designed using Ruby on Rails, AngularJS, and MySQL. Gives users the ability to post, comment, create account, recieve notifications and follow other users. Posting is done instantaneously through AJAX and each user has their own profile page and feeds.
+
+Check it out at https://obscure-ocean-7816.herokuapp.com
